@@ -1,6 +1,5 @@
 import { Cart, ShoppingCart } from "@/components/shoppingCart/ShoppingCart.component";
 import { Currency } from "@/lib/Currency.enum";
-import { createOrder } from "@/lib/createOrder.function";
 import { onApprove } from "@/lib/onApprove.function";
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { useState } from "react";
