@@ -1,3 +1,5 @@
+import {v4 as uuid} from 'uuid';
+
 /**
  * Captures an order
  * 
@@ -7,11 +9,12 @@
  */
 export async function captureOrder(captureId:string, bearer: string) {
     console.log("captureId", captureId)
+    const id = uuid();
     return fetch(`https://api-m.sandbox.paypal.com/v2/checkout/orders/${captureId}/capture`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'PayPal-Request-Id': '7b92603e-77ed-4896-8e78-5dea2050476a',
+            'PayPal-Request-Id': id,
             'Authorization': `Bearer ${bearer}`
         }
     }).then(r => r.json())
